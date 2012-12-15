@@ -1,0 +1,41 @@
+
+html {
+    margin: 10px;
+    text-align: center;
+}
+
+.newQrCode {
+    background: #faebd7;
+    border: 1px solid green;
+    padding: 6px;
+    margin: 4px;
+}
+
+.qrCodeListItem {
+    background: #f0f8ff;
+    border: 1px solid blue;
+    margin: 4px;
+    padding: 6px;
+}
+
+.projectName {
+    font-weight: bold;
+    font-size: large;
+}
+
+.updating {
+    background: #c4c3c3;
+}
+
+.failed {
+    background: red;
+}
+
+.success {
+    background: green;
+}
+
+.newSourcePanel {
+    text-align: right;
+    margin-left: 200px;
+}
