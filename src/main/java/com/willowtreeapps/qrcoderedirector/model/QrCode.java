@@ -26,6 +26,9 @@ public class QrCode implements Serializable {
     private String appleStoreUrl;
 
     @Persistent
+    private String appleIpadStoreUrl;
+
+    @Persistent
     private String googleStoreUrl;
 
     public Long getId() {
@@ -50,6 +53,14 @@ public class QrCode implements Serializable {
 
     public void setAppleStoreUrl(String appleStoreUrl) {
         this.appleStoreUrl = appleStoreUrl;
+    }
+
+    public String getAppleIpadStoreUrl() {
+        return appleIpadStoreUrl;
+    }
+
+    public void setAppleIpadStoreUrl(String appleIpadStoreUrl) {
+        this.appleIpadStoreUrl = appleIpadStoreUrl;
     }
 
     public String getGoogleStoreUrl() {

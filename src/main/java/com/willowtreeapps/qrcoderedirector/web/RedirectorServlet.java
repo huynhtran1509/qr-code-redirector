@@ -34,12 +34,19 @@ public class RedirectorServlet extends HttpServlet {
 
             String appleUrl = qrCode.getAppleStoreUrl();
 
+            String appleIpadUrl = qrCode.getAppleIpadStoreUrl();
+
             String androidUrl = qrCode.getGoogleStoreUrl();
 
             String ua = req.getHeader("User-Agent");
 
-            if ((ua.contains("iPhone") || ua.contains("iPad") || ua.contains("iPod")) && appleUrl != null && !"".equals(androidUrl)) {
-                resp.sendRedirect(resp.encodeRedirectURL(appleUrl));
+            if ((ua.contains("iPhone") || ua.contains("iPad") || ua.contains("iPod")) && appleUrl != null && !"".equals(appleUrl)) {
+
+                if (ua.contains("iPad") && appleIpadUrl != null && !"".equals(appleIpadUrl)){
+                    resp.sendRedirect(resp.encodeRedirectURL(appleIpadUrl));
+                } else {
+                    resp.sendRedirect(resp.encodeRedirectURL(appleUrl));
+                }
             } else if (ua.contains("Android") && androidUrl != null && !"".equals(androidUrl)) {
                 resp.sendRedirect(resp.encodeRedirectURL(androidUrl));
             } else {

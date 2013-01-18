@@ -36,6 +36,8 @@ public class QrCodeForm extends HorizontalPanel {
 
     private final TextBox appleStoreUrlInput;
 
+    private final TextBox appleIpadStoreUrlInput;
+
     private final TextBox googleStoreUrlInput;
 
 
@@ -72,6 +74,11 @@ public class QrCodeForm extends HorizontalPanel {
         appleStoreUrlInput.setVisibleLength(100);
         vPanel.add(appleStoreUrlInput);
 
+        vPanel.add(new Label("Apple Store URL(iPad, if not universal):"));
+        appleIpadStoreUrlInput = new TextBox();
+        appleIpadStoreUrlInput.setVisibleLength(100);
+        vPanel.add(appleIpadStoreUrlInput);
+
         vPanel.add(new Label("Google Store URL:"));
         googleStoreUrlInput = new TextBox();
         googleStoreUrlInput.setVisibleLength(100);
@@ -102,6 +109,8 @@ public class QrCodeForm extends HorizontalPanel {
         appNameInput.setText(mQrCode.getAppName());
 
         appleStoreUrlInput.setText(mQrCode.getAppleStoreUrl());
+
+        appleIpadStoreUrlInput.setText(mQrCode.getAppleIpadStoreUrl());
 
         googleStoreUrlInput.setText(mQrCode.getGoogleStoreUrl());
 
@@ -183,6 +192,7 @@ public class QrCodeForm extends HorizontalPanel {
 
         mQrCode.setAppName(appNameInput.getText());
         mQrCode.setAppleStoreUrl(appleStoreUrlInput.getText());
+        mQrCode.setAppleIpadStoreUrl(appleIpadStoreUrlInput.getText());
         mQrCode.setGoogleStoreUrl(googleStoreUrlInput.getText());
     }
 
